@@ -19,7 +19,7 @@ const SEO = ({ description, lang, meta, title }) => {
             title
             description
             social {
-              twitter
+              wechat
             }
           }
         }
@@ -54,19 +54,19 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
-          name: `twitter:card`,
+          name: `wechat:card`,
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
+          name: `wechat:creator`,
+          content: site.siteMetadata.social.wechat,
         },
         {
-          name: `twitter:title`,
+          name: `wechat:title`,
           content: title,
         },
         {
-          name: `twitter:description`,
+          name: `wechat:description`,
           content: metaDescription,
         },
       ].concat(meta)}

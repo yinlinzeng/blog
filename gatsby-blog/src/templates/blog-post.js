@@ -47,7 +47,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </footer>
       </article>
-
+      {post.tableOfContents ? (
+          <div
+            className="css-toc"
+            dangerouslySetInnerHTML={{
+              __html: '<div>目录</div>' + post.tableOfContents,
+            }}
+          />
+        ) : null}
       <nav>
         <ul
           style={{
@@ -91,6 +98,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Fifty-Three Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`
+      name: `曾银林`,
+      summary: `一位希望成为对互联网有贡献的程序员。`
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`
+      wechat: `hzu_ppy`
     }
   },
   plugins: [
@@ -75,9 +75,19 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       }
+    },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve:`gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-autolink-headers`,
+        ],
+      }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    
+ 
   ]
 }
