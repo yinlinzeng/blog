@@ -6,7 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-
+import "../components/global.scss"
 
 
 const BlogIndex = ({ data, pageContext, location }) => {
@@ -19,32 +19,70 @@ const BlogIndex = ({ data, pageContext, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
+      <section>
+        <section style={{maxWidth: `${rhythm(28)}`,float:`left`}} >
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <article key={node.fields.slug} >
+                <header>
+                  <h3
+                    style={{
+                      marginTop: 0,
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h3>
+                  <span className="iconfont icon-calendar2"></span>
+                  <small className="css-date">{node.frontmatter.date}</small>
+                  <span className="iconfont icon-label_fill"></span>
+                  {node.frontmatter.tags
+                    .map((tag,index)=>{
+                      return (
+                        <Link to="/" className="css-tag" key={node.fields.slug + tag}>{tag}</Link>
+                      )
+                    })
+                  }
+                </header>
+                <section className="">
+                  <p className="css-desc"
+                    style={{
+                      marginBottom:`${rhythm(0.5)}`,
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </section>
+              </article>
+            )
+          })}
+        </section>
+        <section className="css-slide"
+          style={{
+            maxWidth: `${rhythm(12)}`,
+            float:`left`
+          }}
+        ><div>
+          <div style={{
+            textAlign: `center`
+          }}>分类</div>
+          <ul style={{textAlign:`center`}}>
+            <li><Link to="/tag/">{`< `}标签{` />`}</Link></li>
+            <li><Link to="/tag/coding">{`< `}技术{` />`}</Link></li>
+            <li><Link to="/tag/life">{`< `}生活{` />`}</Link></li>
+            <li><Link to="/tag/translation">{`< `}翻译{` />`}</Link></li>
+          </ul>
+        </div>
+        </section>
+      </section>
+      <div style={{
+        width:1000,
+        clear: `both`
+      }}></div>
       <div
           style={{
             display: 'flex',
@@ -101,6 +139,8 @@ query($tag: String!, $skip: Int!, $limit: Int!) {
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
+          tags
+          description
         }
       }
     }

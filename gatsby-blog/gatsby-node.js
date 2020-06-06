@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const homePaginate = path.resolve(`./src/templates/paginate.tsx`)
   const tagTemplate = path.resolve(`./src/templates/tag.tsx`)
+  const alltagTemplate = path.resolve(`./src/templates/alltag.tsx`)
   //查询md文件构建页面
   // 此处是用graphql查询
   const result = await graphql(
@@ -45,7 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMarkdownRemark.edges
  
   // 创建主页分页器
-  const postsPerPage = 2
+  const postsPerPage = 6
   const numPages = Math.ceil(posts.length / postsPerPage)
 
   Array.from({length: numPages}).forEach((_,i)=>{
@@ -60,6 +61,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
+
+
 
   // 创建标签页面
   if(tags!= undefined){
@@ -83,8 +86,12 @@ exports.createPages = async ({ graphql, actions }) => {
         })
       })
     })
+    createPage({
+      path: `/tag`,
+      component: alltagTemplate,
+    })
   }
-  console.log(tags);
+  // console.log(tags);
   //  创建博客贴文页面
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node

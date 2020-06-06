@@ -37,7 +37,8 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(2),
+        marginTop: rhythm(0.5)
       }}
     >
       <Image
@@ -54,7 +55,7 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        Written by  <strong> {author.name} </strong> {author.summary}
       </p>
     </div>
   )

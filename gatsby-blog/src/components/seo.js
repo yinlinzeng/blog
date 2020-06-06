@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ description, lang, meta, title }) => {
+  // const lang = "zh-cn"
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -75,7 +76,7 @@ const SEO = ({ description, lang, meta, title }) => {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `zh-cn`,
   meta: [],
   description: ``,
 }

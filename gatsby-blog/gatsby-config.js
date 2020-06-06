@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Fifty-Three Blog`,
+    title: `伍拾叁的博客`,
     author: {
       name: `曾银林`,
       summary: `一位希望成为对互联网有贡献的程序员。`
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `http://www.zengyinlin.xyz`,
     social: {
       wechat: `hzu_ppy`
     }

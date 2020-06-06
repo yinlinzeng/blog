@@ -6,7 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-
+import "../components/global.scss"
 
 
 const BlogIndex = ({ data, pageContext, location }) => {
@@ -33,7 +33,16 @@ const BlogIndex = ({ data, pageContext, location }) => {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <span className="iconfont icon-calendar2"></span>
+              <small className="css-date">{node.frontmatter.date}</small>
+              <span className="iconfont icon-label_fill"></span>
+              {node.frontmatter.tags
+                .map((tag,index)=>{
+                  return (
+                    <Link to="/" className="css-tag" key={node.fields.slug + tag}>{tag}</Link>
+                  )
+                })
+              }
             </header>
             <section>
               <p
@@ -98,8 +107,9 @@ query($skip: Int!, $limit: Int!) {
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY-MM-DD")
           title
+          tags
         }
       }
     }
