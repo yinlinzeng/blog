@@ -1,32 +1,32 @@
 ---
-
 title: How to develop healthy eating habits?
 
 date: "2020-06-06 19:23:08"
 
 description: "健康饮食习惯"
 
-tags: ["english","article","translation"]
-
+tags: ["english", "article", "translation"]
 ---
+
 ## 原文
-​	Good health is just a matter of taking a new approach to eating and making simple changes.You will need cooking **facilities**, a shopping list,healthy foods,breakfast,healthy **snacks**,and water.Optional: books and internet access.
 
-​	Step1.Cook and prepare your own meals as often as you can.This will help you avoid eating processed and fast foods,which are higher in **sodium** and fat.Healthy,low-fat **recipes** and guidance are available in bookstores and on the internet.
+​ Good health is just a matter of taking a new approach to eating and making simple changes.You will need cooking **facilities**, a shopping list,healthy foods,breakfast,healthy **snacks**,and water.Optional: books and internet access.
 
-​	Step2.Plan healthy meals and make a shopping list.Fill your cart with lots of fresh fruits and vegetables,**whole-grain** foods,and **lean** meats.  
+​ Step1.Cook and prepare your own meals as often as you can.This will help you avoid eating processed and fast foods,which are higher in **sodium** and fat.Healthy,low-fat **recipes** and guidance are available in bookstores and on the internet.
 
-​	Step3.Read **nutrition** labels.Pay attention to **saturated** fat,**sodium**,and sugar.The higher their numbers,the unhealthier they are .
+​ Step2.Plan healthy meals and make a shopping list.Fill your cart with lots of fresh fruits and vegetables,**whole-grain** foods,and **lean** meats.
 
-​	Step4.Eat breakfast every day. Breakfast helps to **rev** up your **metabolism**.Make it a habit to eat something within the first hour after you wake up.
+​ Step3.Read **nutrition** labels.Pay attention to **saturated** fat,**sodium**,and sugar.The higher their numbers,the unhealthier they are .
 
-​	Step5.Try to eat small meals every three to four hours.Aim for three small ,balanced meals and two snacks.
+​ Step4.Eat breakfast every day. Breakfast helps to **rev** up your **metabolism**.Make it a habit to eat something within the first hour after you wake up.
 
-​	Step6.Drink plenty of water every day.Water **hydrates** the body and aids the digestive system.And it's calorie-free!
+​ Step5.Try to eat small meals every three to four hours.Aim for three small ,balanced meals and two snacks.
 
-​	Step7.Feel the difference in your body -- more energy and **stamina**--as well as sharper thinking as you feed your body healthy foods.
+​ Step6.Drink plenty of water every day.Water **hydrates** the body and aids the digestive system.And it's calorie-free!
 
-​	Did you know a study found that more than 16 percent of U.S. children and teens are **obese**?
+​ Step7.Feel the difference in your body -- more energy and **stamina**--as well as sharper thinking as you feed your body healthy foods.
+
+​ Did you know a study found that more than 16 percent of U.S. children and teens are **obese**?
 
 ## 翻译
 
@@ -63,5 +63,5 @@ tags: ["english","article","translation"]
 - saturated (vt.)使饱和，使充满，浸透(a.)浸透的，饱度高的，深颜色
 - hydrates 化合物
 - digestive 消化的
-- stamina stamen的复数，活力，耐力，精力
+- stamina stamen 的复数，活力，耐力，精力
 - obese 肥胖

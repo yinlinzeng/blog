@@ -1,16 +1,16 @@
 ---
-
 title: How to look great in photographs?
 
 date: "2020-06-06 19:23:18"
 
 description: "如何让自己更上相呢？"
 
-tags: ["english","article","translation"]
-
+tags: ["english", "article", "translation"]
 ---
+
 ## 原文
-​	Sure, a beautiful photograph takes some skill behind the lens,but it takes a little skill in front of it,too.You will need:a photographer and a camera with flash.
+
+​ Sure, a beautiful photograph takes some skill behind the lens,but it takes a little skill in front of it,too.You will need:a photographer and a camera with flash.
 
 Step 1: When choosing your clothes,leave bright colors,crazy patterns and horizontal stripes in the closet.Neutral colors look best.
 
@@ -48,13 +48,13 @@ Did you know:The first commercially available color film was offered in France i
 
 **第五点**想让站姿自然的话，可以稍微后倾，重心放在后脚，一边的臀部往前，维持挺立站姿，但不要太夸张，要像希腊雕像，别像威廉·薛特纳那样英挺。
 
-**第六点** 脸稍微侧对镜头，这样脸看起来会比较小，别用广角镜头，脸会变更宽。第七点，盯着光源一会，像台  灯，电灯等等，这样能缩小瞳孔，减少红眼机率。但切记，别直视太阳。
+**第六点** 脸稍微侧对镜头，这样脸看起来会比较小，别用广角镜头，脸会变更宽。第七点，盯着光源一会，像台 灯，电灯等等，这样能缩小瞳孔，减少红眼机率。但切记，别直视太阳。
 
 **第八点**在摄像师按下快门前闭上眼睛，让摄影师数到三，这是避免眨眼毁了照片的最好办法。
 
-**第九点** 最后也是最重要的一点，微笑。矫情地说Cheese之类的话，硬要露齿笑笑容会很假，看起来会像新闻记者  或地方政客，尝试回忆有趣的事，带出你自然的微笑。
+**第九点** 最后也是最重要的一点，微笑。矫情地说 Cheese 之类的话，硬要露齿笑笑容会很假，看起来会像新闻记者 或地方政客，尝试回忆有趣的事，带出你自然的微笑。
 
-你知道吗：第一部彩色商业广告出现在1907年的法国。
+你知道吗：第一部彩色商业广告出现在 1907 年的法国。
 
 ## 词汇
 
@@ -63,4 +63,3 @@ Did you know:The first commercially available color film was offered in France i
 - rear 后面，背后，(a.)后面的(vt.)养育，培养，举起，树立
 - whereas (conj.)然而，反之，鉴于
 - trim 整齐，装饰，修剪(a.)整齐的(vt.)整理，修剪，装饰(vi.)见风使舵
-

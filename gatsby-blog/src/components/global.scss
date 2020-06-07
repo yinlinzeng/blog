@@ -48,22 +48,23 @@ ul,ol{
   list-style: none;
 }
 // public
-
-.iconfont{
-  margin-right: 8px;
-};
-.icon-label_fill{
-  margin-left: 20px;
+.css-time{
+  margin-top: 10px;
+  .iconfont{
+    margin-right: 8px;
+  };
+  .icon-label_fill{
+    margin-left: 20px;
+  }
+  .css-tag{
+    margin-right: 6px;
+  };
+  small{
+    font-size: 16px;
+    font-weight: $Semi-bold;
+    margin-right: 6px;
+  };
 }
-.css-tag{
-  margin-right: 6px;
-};
-small{
-  font-size: 16px;
-  font-weight: $Semi-bold;
-  margin-right: 6px;
-};
-
 // header 
 .css-header {
   border-bottom: $borderBottom;
@@ -75,7 +76,6 @@ small{
   display: flex;
   justify-content : space-between;
   article{
-    min-width: 800px;
     header{
       h3{
         font-family: $fontFamily;
@@ -93,6 +93,7 @@ small{
   }
   .css-slide{
     width: 20%;
+    text-align: center;
     > div{
       margin-top: 10vh;
       margin-left: 1vw;

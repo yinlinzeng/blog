@@ -3,121 +3,29 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import "./global.scss"
-import moment from "moment"
-// import moment from 'moment'
-// 里面的字符可以根据自己的需要进行调整
-moment.locale('zh-cn', {
-  months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
-  monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
-  weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
-  weekdaysShort: '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-  weekdaysMin: '日_一_二_三_四_五_六'.split('_'),
-  longDateFormat: {
-    LT: 'HH:mm',
-    LTS: 'HH:mm:ss',
-    L: 'YYYY-MM-DD',
-    LL: 'YYYY年MM月DD日',
-    LLL: 'YYYY年MM月DD日Ah点mm分',
-    LLLL: 'YYYY年MM月DD日ddddAh点mm分',
-    l: 'YYYY-M-D',
-    ll: 'YYYY年M月D日',
-    lll: 'YYYY年M月D日 HH:mm',
-    llll: 'YYYY年M月D日dddd HH:mm'
-  },
-  meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
-  meridiemHour: function (hour, meridiem) {
-    if (hour === 12) {
-      hour = 0;
-    }
-    if (meridiem === '凌晨' || meridiem === '早上' ||
-      meridiem === '上午') {
-      return hour;
-    } else if (meridiem === '下午' || meridiem === '晚上') {
-      return hour + 12;
-    } else {
-      // '中午'
-      return hour >= 11 ? hour : hour + 12;
-    }
-  },
-  meridiem: function (hour, minute, isLower) {
-    const hm = hour * 100 + minute;
-    if (hm < 600) {
-      return '凌晨';
-    } else if (hm < 900) {
-      return '早上';
-    } else if (hm < 1130) {
-      return '上午';
-    } else if (hm < 1230) {
-      return '中午';
-    } else if (hm < 1800) {
-      return '下午';
-    } else {
-      return '晚上';
-    }
-  },
-  calendar: {
-    sameDay: '[今天]LT',
-    nextDay: '[明天]LT',
-    nextWeek: '[下]ddddLT',
-    lastDay: '[昨天]LT',
-    lastWeek: '[上]ddddLT',
-    sameElse: 'L'
-  },
-  dayOfMonthOrdinalParse: /\d{1,2}(日|月|周)/,
-  ordinal: function (number, period) {
-    switch (period) {
-      case 'd':
-      case 'D':
-      case 'DDD':
-        return number + '日';
-      case 'M':
-        return number + '月';
-      case 'w':
-      case 'W':
-        return number + '周';
-      default:
-        return number;
-    }
-  },
-  relativeTime: {
-    future: '%s内',
-    past: '%s前',
-    s: '几秒',
-    ss: '%d秒',
-    m: '1分钟',
-    mm: '%d分钟',
-    h: '1小时',
-    hh: '%d小时',
-    d: '1天',
-    dd: '%d天',
-    M: '1个月',
-    MM: '%d个月',
-    y: '1年',
-    yy: '%d年'
-  },
-  week: {
-    // GB/T 7408-1994《数据元和交换格式·信息交换·日期和时间表示法》与ISO 8601:1988等效
-    dow: 1, // Monday is the first day of the week.
-    doy: 4  // The week that contains Jan 4th is the first week of the year.
-  }
-})
-
-
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
   let style
+  let css_slide
+  let css_content
+  let slide
+  let article_num
+  let slide_num
 
   // 计算日期
-  let days = (()=>{
-    let stime = new Date("2020/01/01 00:00:00").getTime();
-    let etime = new Date().getTime();
-    let days = parseInt((etime-stime) / (1000*3600*24))
+  let days = (() => {
+    let stime = new Date("2020-06-07 15:41:53").getTime()
+    let etime = new Date().getTime()
+    let days = parseInt((etime - stime) / (1000 * 3600 * 24))
     return days
   })()
 
-  if (location.pathname === rootPath) {
+  if (
+    location.pathname === rootPath ||
+    location.pathname.indexOf("tag") != -1
+  ) {
     header = (
       <h4
         style={{
@@ -125,18 +33,49 @@ const Layout = ({ location, title, children }) => {
           fontSize: `1.5rem`,
           letterSpacing: `0.05rem`,
           marginTop: 0,
-          marginBottom: `${rhythm(0.2)}`
+          marginBottom: `${rhythm(0.2)}`,
         }}
-      > 
-        {title}
+      >
+        <Link to={`/`}>{title}</Link>
       </h4>
-    );
-    style  = {
+    )
+    style = {
       marginLeft: `auto`,
       marginRight: `auto`,
       maxWidth: rhythm(40),
       padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
     }
+    css_content = "css-content"
+    css_slide = "css-slide"
+    slide = (
+      <div>
+        <div>分类</div>
+        <ul>
+          <li>
+            <Link to="/tag/">
+              {`< `}标签{` />`}
+            </Link>
+          </li>
+          <li>
+            <Link to="/tag/coding">
+              {`< `}技术{` />`}
+            </Link>
+          </li>
+          <li>
+            <Link to="/tag/life">
+              {`< `}生活{` />`}
+            </Link>
+          </li>
+          <li>
+            <Link to="/tag/translation">
+              {`< `}翻译{` />`}
+            </Link>
+          </li>
+        </ul>
+      </div>
+    )
+    article_num = rhythm(26)
+    slide_num = rhythm(14)
   } else {
     header = (
       <h4
@@ -144,40 +83,44 @@ const Layout = ({ location, title, children }) => {
           fontSize: `1.5rem`,
           letterSpacing: `0.05rem`,
           marginTop: 0,
-          marginBottom: `${rhythm(0.2)}`
+          marginBottom: `${rhythm(0.2)}`,
         }}
       >
-        <Link
-          to={`/`}
-        >
-          {title}
-        </Link>
+        <Link to={`/`}>{title}</Link>
       </h4>
-    );
-    style  = {
+    )
+    style = {
       marginLeft: `auto`,
       marginRight: `auto`,
       maxWidth: rhythm(34),
       padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
     }
-
+    css_slide = null
+    css_content = "css-post"
+    css_slide = null
+    article_num = rhythm(36)
   }
   return (
-    <div
-      style={style}
-    >
-      <header
-        className='css-header'
-      >
-        {header}
-      </header>
-      <main style={{
-        minHeight:rhythm(16)
-      }}>{children}</main>
-      <footer className="css-footer" >
+    <div style={style}>
+      <header className="css-header">{header}</header>
+      <main className={css_content}>
+        <article style={{ maxWidth: article_num }}>{children}</article>
+        <slide className={css_slide} style={{ maxWidth: slide_num }}>
+          {slide}
+        </slide>
+      </main>
+      <footer className="css-footer">
         <p>© 2020-{new Date().getFullYear()} 伍拾叁</p>
-        <p> 一转眼 已经过了 <strong>{days}</strong> 天</p>
-        <p>power by <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a></p>
+        <p>
+          {" "}
+          一转眼 已经过了 <strong>{days}</strong> 天
+        </p>
+        <p>
+          power by{" "}
+          <a href="https://www.gatsbyjs.org/" target="_blank" rel="noreferrer">
+            Gatsby
+          </a>
+        </p>
       </footer>
     </div>
   )

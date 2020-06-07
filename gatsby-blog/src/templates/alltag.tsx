@@ -2,11 +2,10 @@
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import "../components/global.scss"
+// import "../components/global.scss"
 
 const $limit = 6
 
@@ -31,11 +30,10 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
       <div className="css-content"> 
         <section className="css-article"
           style={{
-            maxWidth: `${rhythm(26)}`,
+            float: `left`
           }}
         >
           {tags.map(({ fieldValue,totalCount }) => <Link
@@ -46,21 +44,6 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           to={`/tag/`+ fieldValue}
           key={fieldValue}
           >{fieldValue}{`(`}{totalCount}{`)`}</Link>)}
-        </section>
-        <section className="css-slide"
-          style={{
-            maxWidth: `${rhythm(16)}`
-          }}
-        ><div>
-          <div style={{
-            textAlign: `center`
-          }}>分类</div>
-          <ul style={{textAlign:`center`}}>
-            <li><Link to="/tag/coding">{`< `}技术分享{` />`}</Link></li>
-            <li><Link to="/tag">{`< `}杂谈交流{` />`}</Link></li>
-            <li><Link to="/tag/about">{`< `}关于我的{` />`}</Link></li>
-          </ul>
-        </div>
         </section>
       </div>
     </Layout>

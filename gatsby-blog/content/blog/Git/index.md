@@ -1,23 +1,21 @@
 ---
-
 title: git基本指令
 
 date: "2020-06-06 19:22:35"
 
 description: "git基本指令"
 
-tags: ["coding","git"]
-
+tags: ["coding", "git"]
 ---
 
 地址：https://github.com/yinlinzeng/Web.git
 
-1. 先初始化本地目录	
+1. 先初始化本地目录
 2. 添加文件到仓库
 3. 把文件提交到仓库，并把版本号定为“提交的信息”
-4. 创建新分支newbranch
+4. 创建新分支 newbranch
 5. 切换到新分支
-6. 把文件上传到github上的newbranch
+6. 把文件上传到 github 上的 newbranch
 
 `git init`：初始化本地目录
 
@@ -27,7 +25,7 @@ tags: ["coding","git"]
 
 `git commit -m '<name>'`：向仓库添加文件
 
-`git branch `：查看分支情况
+`git branch`：查看分支情况
 
 `git checkout <name>`：切换分支
 
@@ -49,6 +47,6 @@ tags: ["coding","git"]
 
 `git reset HEAD <file>`：把暂存区的文件移入工作区
 
-`git rm `：删除工作区的文件
+`git rm`：删除工作区的文件
 
 `git status`：查看状态

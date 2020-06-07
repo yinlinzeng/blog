@@ -1,15 +1,12 @@
 ---
-
 title: Something Just Like This”The Chainsmokers&Coldplay
 
 date: "2020-06-06 19:22:39"
 
 description: "英文歌曲学习"
 
-tags: ["english","song"]
-
+tags: ["english", "song"]
 ---
-
 
 I've been reading books of old.
 
@@ -33,7 +30,7 @@ Some Superhero
 
 Some fairytale bliss
 
-Just something I can turn to 
+Just something I can turn to
 
 Somebody I can kiss
 
@@ -47,17 +44,17 @@ Doo doo doo...
 
 ...
 
-The testaments they told 
+The testaments they told
 
 The moon and its eclipse
 
 And Superman unrolls
 
-A suit before he lifts 
+A suit before he lifts
 
-But I'm not the kind of person that it fits 
+But I'm not the kind of person that it fits
 
-She said where'd you wanna go 
+She said where'd you wanna go
 
 How much you wanna risk
 
@@ -81,8 +78,7 @@ Somebody I can miss
 
   1. I got goosebumps listening to your performance. 我一听你唱这首歌就起鸡皮疙瘩
   2. I think you have great style. 你很有自己的风格
-  3. Better luck next time!  下次加油咯
+  3. Better luck next time! 下次加油咯
   4. This is a tough song.Points for courage! 这首歌不好唱，勇气可嘉
 
 https://www.bilibili.com/video/av15918520
-

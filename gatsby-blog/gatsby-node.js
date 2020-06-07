@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
-          group ( field: frontmatter___tags ){
+          group(field: frontmatter___tags) {
             fieldValue
             totalCount
           }
@@ -44,45 +44,43 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const tags = result.data.allMarkdownRemark.group
   const posts = result.data.allMarkdownRemark.edges
- 
+
   // 创建主页分页器
   const postsPerPage = 6
   const numPages = Math.ceil(posts.length / postsPerPage)
 
-  Array.from({length: numPages}).forEach((_,i)=>{
+  Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i=== 0 ? `/blog`: `/blog/${i+1}`,
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
       component: homePaginate,
-      context:{
-        currentPage: i+1,
+      context: {
+        currentPage: i + 1,
         totalPage: numPages,
         limit: postsPerPage,
-        skip: i* postsPerPage,
-      }
+        skip: i * postsPerPage,
+      },
     })
   })
 
-
-
   // 创建标签页面
-  if(tags!= undefined){
-    tags.forEach(tag=>{
+  if (tags != undefined) {
+    tags.forEach(tag => {
       const total = tag.totalCount
-      const numPages = Math.ceil(total/postsPerPage)
-      Array.from({length:numPages}).forEach((_,i)=>{
+      const numPages = Math.ceil(total / postsPerPage)
+      Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
           path:
             i === 0
               ? `/tag/${tag.fieldValue}`
-              : `/tag/${tag.fieldValue}/${i+1}`,
-            component: tagTemplate,
-            context: {
-              tag: tag.fieldValue,
-              currentPage: i+1,
-              totalPage: numPages,
-              limit: postsPerPage,
-              skip: i*postsPerPage,
-            },
+              : `/tag/${tag.fieldValue}/${i + 1}`,
+          component: tagTemplate,
+          context: {
+            tag: tag.fieldValue,
+            currentPage: i + 1,
+            totalPage: numPages,
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+          },
         })
       })
     })
@@ -98,7 +96,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const next = index === 0 ? null : posts[index - 1].node
     // 生成单个页面函数
     createPage({
-      path: post.node.fields.slug,//页面路径
+      path: post.node.fields.slug, //页面路径
       component: blogPost, //页面使用的模板
       context: {
         slug: post.node.fields.slug,

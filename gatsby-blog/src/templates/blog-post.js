@@ -1,11 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import "../components/global.scss"
+// import "../components/global.scss"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -19,7 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article className="css-post">
-        <header >
+        <header>
           <h1
             style={{
               marginTop: rhythm(1),
@@ -28,16 +27,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          <span className="iconfont icon-calendar2"></span>
-          <small className="css-date">{post.frontmatter.date}</small>
-          <span className="iconfont icon-label_fill"></span>
-          {post.frontmatter.tags
-            .map((tag,index)=>{
+          <div className="css-time">
+            <span className="iconfont icon-calendar2"></span>
+            <small className="css-date">{post.frontmatter.date}</small>
+            <span className="iconfont icon-label_fill"></span>
+            {post.frontmatter.tags.map((tag, index) => {
               return (
-                <Link to="/" className="css-tag" key={tag}>{tag}</Link>
+                <Link to={"/tag/" + tag} className="css-tag" key={tag}>
+                  {tag}
+                </Link>
               )
-            })
-          }
+            })}
+          </div>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -45,18 +46,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-        <footer>
-          <Bio />
-        </footer>
       </article>
       {post.tableOfContents ? (
-          <div
-            className="css-toc"
-            dangerouslySetInnerHTML={{
-              __html: '<div>目录</div>' + post.tableOfContents,
-            }}
-          />
-        ) : null}
+        <div
+          className="css-toc"
+          dangerouslySetInnerHTML={{
+            __html: "<div>目录</div>" + post.tableOfContents,
+          }}
+        />
+      ) : null}
       <nav>
         <ul
           style={{
